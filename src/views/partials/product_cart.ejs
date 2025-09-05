@@ -1,0 +1,42 @@
+<li
+  class="card list-group-item d-flex flex-row justify-content-between align-items-center p-0 pe-2"
+>
+  <div class="d-flex align-items-center">
+    <img
+      src="<%= product.imageUrl %>"
+      alt="<%= product.name %>"
+      style="width: 50px; height: 50px; margin-right: 10px; object-fit: cover"
+      class="card-img"
+    />
+    <span class="me-2"> <%= product.name %>: </span>
+    <span class="text-success"> $<%= product.price.toFixed(2) %> </span>
+  </div>
+  <div>
+    <form action="/cart/update" method="POST" class="d-inline update-form">
+      <input type="hidden" name="id" value="<%= product.id %>" />
+      <label for="quantity">Quantity: </label>
+      <input
+        type="number"
+        name="quantity"
+        value="<%= product.quantity %>"
+        min="1"
+        class="form-control form-control-sm d-inline-block quantity-input"
+        style="width: 70px; margin-right: 5px"
+      />
+    </form>
+    <form action="/cart/delete" method="POST" class="d-inline">
+      <input type="hidden" name="id" value="<%= product.id %>" />
+      <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+    </form>
+  </div>
+</li>
+
+<script>
+  document.querySelectorAll('.quantity-input').forEach((input) => {
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        input.closest('.update-form').submit();
+      }
+    });
+  });
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/images/chicken.png">
+    <title>Chicken Stock</title>
+    <style>
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <img
+            src="/images/chicken.png"
+            alt="Chicken Logo"
+            width="40"
+            height="40"
+            class="me-2"
+          />
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto px-2 mb-2 justify-content-center mb-md-0"
+          >
+            <li><a href="/" class="nav-link px-2 text-white">Shop</a></li>
+            <li><a href="/cart" class="nav-link px-2 text-white">Cart</a></li>
+          </ul>
+
+          <form
+            action="/search"
+            method="GET"
+            class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+          >
+            <input
+              type="search"
+              name="q"
+              class="form-control form-control-dark"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2">
+              Login
+            </button>
+            <button type="button" class="btn btn-warning">Sign-up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container flex-grow-1">
